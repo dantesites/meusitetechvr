@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Laboratórios VR Educacionais — TECHVR</title>
+  <meta name="description" content="Laboratórios de Realidade Virtual com Oculus para escolas, faculdades e cursos de medicina. Demonstrações com Organon 3D, cirurgias simuladas e softwares educacionais para matemática, geografia, história e biologia." />
+  <style>
+    :root{
+      --accent:#00ffd5;
+      --bg:#04040b;
+      --card:#0b0b12;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --text:#e6f7ff;
+      font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#030313 0%, #071025 60%);color:var(--text)}
+    .container{max-width:1100px;margin:0 auto;padding:36px}
+    .hero{
+      display:flex;gap:28px;align-items:center;
+      padding:48px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(10,10,18,0.6), rgba(8,12,20,0.4));
+      box-shadow:0 10px 40px rgba(0,0,0,0.6);overflow:hidden;position:relative;
+    }
+    .hero-left{flex:1;min-width:280px}
+    .hero-right{flex:1;display:flex;justify-content:center;align-items:center;position:relative}
+    h1{font-size:2.1rem;margin:0 0 12px 0;line-height:1.02;color:var(--accent)}
+    p.lead{margin:0 0 20px 0;color:#bcd;}
+    .cta {display:inline-flex;gap:12px;align-items:center;background:var(--accent);color:#002; padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600}
+    /* Futuristic headset illustration placeholder */
+    .oculus-card{
+      width:360px;height:260px;border-radius:16px;background:linear-gradient(90deg,#091026,#07132a);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+    }
+    .laser {
+      position:absolute;width:240%;height:2px;background:linear-gradient(90deg,transparent,rgba(0,255,213,0.95),transparent);
+      top:30%;left:-40%;transform:rotate(-6deg);animation:move 2.5s linear infinite;
+      opacity:0.9;
+    }
+    .laser:nth-child(2){top:60%;animation-duration:3.4s;transform:rotate(8deg)}
+    @keyframes move{0%{left:-60%}100%{left:60%}}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+    .section{margin-top:34px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    ul{margin:8px 0 0 18px}
+    footer{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .badges{display:flex;gap:12px;align-items:center}
+    .badge-img{height:56px;background:var(--glass);padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+    .badge-img img{max-height:56px;display:block}
+    /* WhatsApp floating button */
+    .whatsapp-float{
+      position:fixed;right:22px;bottom:22px;background:#25d366;color:white;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.45);text-decoration:none;font-size:28px
+    }
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{flex-direction:column}
+      .grid-2{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero" role="banner" aria-label="Apresentação">
+      <div class="hero-left">
+        <h1>Laboratórios de Realidade Virtual com Oculus</h1>
+        <p class="lead">Experiências educacionais imersivas para escolas e faculdades. Visualize aulas de matemática, geografia, história e biologia — e treine procedimentos médicos com Organon 3D em ambientes cirúrgicos simulados.</p>
+        <!-- WhatsApp com mensagem padrão -->
+        <a id="cta-whatsapp" class="cta" href="https://wa.me/5571992567972?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20laborat%C3%B3rio%20VR." target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato pelo WhatsApp">
+          📲 Chamar no WhatsApp
+        </a>
+        <p style="margin-top:12px;font-size:0.95rem;color:#9fb">Laboratórios instalados em escolas e faculdades — demonstrações e implantação presencial/online.</p>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <div class="oculus-card" role="img" aria-label="Ilustração futurista de pessoa com oculus e lasers">
+          <!-- Substitua por imagem ou vídeo real -->
+          <svg width="220" height="140" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+            <rect x="0" y="0" width="220" height="140" rx="12" fill="url(#g)"/>
+            <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#001022"/><stop offset="1" stop-color="#002a2a"/></linearGradient></defs>
+            <text x="50%" y="55%" fill="#09ffd8" font-size="16" font-family="sans-serif" text-anchor="middle">Pessoa com Oculus</text>
+            <text x="50%" y="75%" fill="#8cf" font-size="12" font-family="sans-serif" text-anchor="middle">Efeitos de laser em motion</text>
+          </svg>
+          <div class="laser" aria-hidden="true"></div>
+          <div class="laser" aria-hidden="true"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" aria-labelledby="sobre">
+        <h2 id="sobre">O que mostramos</h2>
+        <div class="grid-2">
+          <div>
+            <p>Apresentamos laboratórios VR que já foram montados em escolas e faculdades, com usos práticos em sala de aula e em cursos superiores:</p>
+            <ul>
+              <li>Ambientes imersivos para aulas expositivas e exploração livre.</li>
+              <li>Simulações práticas para desenvolvimento de habilidades e avaliação.</li>
+              <li>Integração com softwares educacionais (veja abaixo).</li>
+              <li>Demonstrações ao vivo, treinamento de professores e suporte técnico.</li>
+            </ul>
+          </div>
+          <div>
+            <p>Tecnologias e diferenciais:</p>
+            <ul>
+              <li>Headsets Oculus com estações de trabalho configuradas para laboratórios educativos.</li>
+              <li>Design futurista com interfaces intuitivas e motion graphics (lasers, transições suaves).</li>
+              <li>Conteúdo customizado conforme currículo escolar e demandas da faculdade.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="escolas">
+        <h2 id="escolas">Usos nas escolas</h2>
+        <div class="gallery" role="list">
+          <div class="card" role="listitem">
+            <strong>Matemática</strong>
+            <p>Visualização geométrica em 3D, manipulação de sólidos e visual proofs. Integrações sugeridas: GeoGebra (para VR/3D), simuladores interativos.</p>
+          </div>
+          <div class="card" role="listitem">
+            <strong>Geografia</strong>
+            <p>Exploração de mapas, topografia, mudanças climáticas em escala global. Uso de camadas de dados e tours guiados.</p>
+          </div>
+          <div class="card" role="listitem">
+            <strong>História</strong>
+            <p>Reconstituições históricas imersivas: visitas a cidades antigas, cenas históricas e linhas do tempo 3D que colocam o estudante 'dentro' do evento.</p>
+          </div>
+          <div class="card" role="listitem">
+            <strong>Biologia</strong>
+            <p>Modelos 3D de células, ecossistemas e dissecação virtual — aprendizados sem risco e com alto engajamento.</p>
+          </div>
+          <div class="card" role="listitem">
+            <strong>Projetos interdisciplinares</strong>
+            <p>Atividades STEAM que combinam programação, física e arte em ambientes VR.</p>
+          </div>
+          <div class="card" role="listitem">
+            <strong>Laboratórios móveis</strong>
+            <p>Unidades que se deslocam entre escolas, com setup rápido e treinamento para professores.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="medicina">
+        <h2 id="medicina">Usos em Medicina — Organon 3D e simulações cirúrgicas</h2>
+        <p>Para faculdades de medicina oferecemos laboratórios e estações de simulação para:</p>
+        <ul>
+          <li>Exploração da anatomia humana com Organon 3D — estudo detalhado dos sistemas, dissecações virtuais e visualização de estruturas em 3D.</li>
+          <li>Treino de procedimentos cirúrgicos em ambiente controlado, com cenários de emergência e prática repetível sem risco para pacientes.</li>
+          <li>Integração com planos de aula, avaliações práticas e acompanhamento do progresso do aluno.</li>
+        </ul>
+        <div style="margin-top:12px">
+          <strong>Benefícios para faculdades:</strong>
+          <ul>
+            <li>Redução de custos com material descartável e cadáveres para algumas etapas de ensino.</li>
+            <li>Aprimoramento de coordenação, reconhecimento anatômico e tomada de decisão clínica.</li>
+            <li>Preparação para cenários reais com feedback e métricas de desempenho.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="implantacao">
+        <h2 id="implantacao">Como funciona a implantação</h2>
+        <ol>
+          <li>Visita técnica e levantamento das necessidades da instituição.</li>
+          <li>Proposta de layout do laboratório, equipamentos e conteúdos personalizados.</li>
+          <li>Instalação, configuração de softwares (incluindo Organon 3D quando aplicável) e treinamento para professores.</li>
+          <li>Suporte contínuo e atualizações de conteúdo.</li>
+        </ol>
+      </section>
+
+      <section class="section" aria-labelledby="contato">
+        <h2 id="contato">Contato rápido</h2>
+        <p>Entre em contato pelo WhatsApp para agendar demonstração presencial ou virtual, orçamento e informações técnicas.</p>
+        <p style="margin-top:8px">
+          <a id="wh-link" class="cta" href="https://wa.me/5571992567972?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20laborat%C3%B3rio%20VR." target="_blank" rel="noopener noreferrer">📲 Chamar agora pelo WhatsApp</a>
+        </p>
+        <p style="margin-top:8px;font-size:0.9rem;color:#9fb">Número utilizado: +55 71 99256-7972 (formato internacional: 5571992567972).</p>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>TECHVR</strong>
+        <div style="color:#9fb;font-size:0.95rem">Instalação de laboratórios VR • Treinamento • Conteúdo educativo</div>
+      </div>
+
+      <div class="badges" aria-hidden="false">
+        <!-- Coloque os arquivos no diretório /assets/ com estes nomes ou atualize os src -->
+        <div class="badge-img" title="Governo do Estado da Bahia">
+          <img src="assets/emblema-bahia.png" alt="Emblema Governo do Estado da Bahia">
+        </div>
+        <div class="badge-img" title="Unex">
+          <img src="assets/emblema-unex.png" alt="Emblema Unex">
+        </div>
+        <div class="badge-img" title="Faculdade Zarns">
+          <img src="assets/emblema-zarns.png" alt="Emblema Faculdade Zarns">
+        </div>
+        <div class="badge-img" title="TECHVR">
+          <img src="assets/logo-techvr.png" alt="Logo TECHVR">
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- WhatsApp floating button -->
+  <a id="wh-float" class="whatsapp-float" href="https://wa.me/5571992567972?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20laborat%C3%B3rio%20VR." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+    <span style="font-weight:700">💬</span>
+  </a>
+
+  <script>
+    // Número já embutido (5571992567972). Se quiser alterar dinamicamente, ajuste aqui.
+    const numeroWhatsApp = "5571992567972";
+    const mensagemPadrao = "Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20laborat%C3%B3rio%20VR.";
+    function geraLinkWa(num, msg){
+      return "https://wa.me/" + num + "?text=" + msg;
+    }
+    // Atualiza qualquer link (por segurança)
+    document.querySelectorAll('[href^="https://wa.me/"]').forEach(a=>{
+      a.href = geraLinkWa(numeroWhatsApp, mensagemPadrao);
+    });
+  </script>
+</body>
+</html>
